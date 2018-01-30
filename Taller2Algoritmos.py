@@ -19,6 +19,15 @@ def FindMaxSubArrayAux(A,l,h):
         if A[2] >= B[2] and A[2]>= C[2] : return A
         elif B[2] >= A[2] and B[2] >= C[2]: return B
         else: return C
+def DerivadaImplicita(A):
+    result = []
+    if len(A) > 2:
+        result.append(0)
+        for i in range (1,len(A)-1):
+            result.append(A[i] - A[i-1])
+    else:
+        result.append(A[0])
+    return result
 def FindMaxSubArray(A):
     return FindMaxSubArrayAux(A,0,len(A)-1) ;
 def main():
